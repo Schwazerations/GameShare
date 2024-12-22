@@ -5,14 +5,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.game.common.utils.DateUtil;
-import com.game.common.utils.SnowflakeIdGenerator;
-import jakarta.annotation.Resource;
+import com.game.common.utils.generator.SnowflakeIdGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @TableName("order")
 @Data

@@ -4,18 +4,18 @@ const routers = [{
     name:"Index",
     meta: { requiresAuth: true },    //需要认证
 },{
-    path:"/detail",
+    path:"/detail/:gid",
     component: () => import("@/views/detail/index.vue"),
     name:"Detail",
     meta: { requiresAuth: true },
 },{
-    path:"/info",
-    component: () => import("@/views/info/index.vue"),
-    name:"Info",
+    path:"/profile",
+    component: () => import("@/views/profile/index.vue"),
+    name:"Profile",
     meta: { requiresAuth: true },
 },{
-    path:"/info/order",
-    component: () => import("@/views/info/order/index.vue"),
+    path:"/profile/order",
+    component: () => import("@/views/profile/order/index.vue"),
     name:"Order",
     meta: { requiresAuth: true },
 }

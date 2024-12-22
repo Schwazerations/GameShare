@@ -20,7 +20,7 @@ const images= ref([
       ]);
 const handleClick = (index) => {
   const gid = images.value[index].src.match(/\/(\d+)\//)[1];
-  router.push('/detail?gid='+gid);
+  router.push('/detail/' + gid);
 };
 </script>
 

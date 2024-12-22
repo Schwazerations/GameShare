@@ -48,45 +48,35 @@ res => {
     return res.data;  // 剥一层
   } else {
     if (code === 401) {
-      ElMessage({ message: '登录信息失效，请你重登', type: 'error' });
-    } else if (code === 409) {
-      if (res.data.data.action === 'signIn') {
-        ElMessage({ message: '今日已签到！别急呦 ~', type: 'info' });
-        return Promise.reject('重复签到');
-      }
+      ElMessage({ message: '登录信息失效，请重登', type: 'error' });
     } else {
-      ElMessage({ message: '系统未知异常，请麻烦管理员：' + msg, type: 'error' });
+      const errorCode = res.data.data.ErrorCode
+      console.log('errorCode', errorCode)
+      if (errorCode === 'user.captcha.invalid') {
+        ElMessage({ message: '输入的验证码错误或验证码已过期，请刷新后重新输入验证码', type: 'warning' });
+      } else if(errorCode === 'user.not.found') {
+        ElMessage({ message: '用户不存在，请重新输入', type: 'warning' });
+      } else if (errorCode === 'user.username.password.invalid') {
+        ElMessage({ message: '手机号或密码不合法，请重新输入', type: 'warning' });
+      } else if (errorCode === 'user.password.not.match') {
+        ElMessage({ message: '密码不对，请重新输入', type: 'warning' });
+      } else if (errorCode === 'user.register.utel.duplicate') {
+        ElMessage({ message: '该手机号已注册，请重新输入', type: 'warning' });
+      } else if (errorCode === 'user.login.input.invalid') {
+        ElMessage({ message: res.data.data.ErrorMessage, type: 'warning' });  // 后端代替前端校验时，异常信息由后端返回的数据决定
+      }
+      else {
+        ElMessage({ message: '系统未知异常，请呼叫管理员：' + msg, type: 'error' });
+      }
     }
     return Promise.reject('error');
   }
 },
 error => {
   endLoading();
-  ElMessage({
-      message: `响应失败。${error}`,
-      type: 'error'
-  })
-  console.log('err' + error)
-  // let { message } = error;
-  // if (message == "Network Error") {
-  //   message = "后端接口连接异常";
-  // } else if (message.includes("timeout")) {
-  //   message = "系统接口请求超时";
-  // } else if (message.includes("Request failed with status code")) {
-  //   message = "系统接口" + message.substr(message.length - 3) + "异常";
-  // }
-  // ElMessage({ message: message, type: 'error', duration: 5 * 1000 })
+  console.error('err', error)
+  ElMessage({ message: `服务器抢修中，请耐心等待。${error}`, type: 'error' })
 
-  // if (error.status == 401){
-  //     console.error('jwt为空或过期。')
-  //     router.push('/LR')
-  //     ElMessage({
-  //         message: '登录信息失效，请你重登',
-  //         type: 'error'
-  //     })
-  // } else {
-  //     // router.push({ path: '/500' })   // 跳转错误页面
-  // }
   return Promise.reject(error);
 }
 )
@@ -104,7 +94,7 @@ export function download(url, filename) {
   })
   .catch(err => {
     endLoading()
-    ElMessage({ message: `下载失败！请麻烦管理员。${err}`, type: 'error' })
+    ElMessage({ message: `下载失败！请呼叫管理员。${err}`, type: 'error' })
   })
 } 
 

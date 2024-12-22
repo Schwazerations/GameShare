@@ -1,10 +1,10 @@
-package com.game.framework.security;
+package com.game.framework.security.Encoder;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PasswordEncoder implements org.springframework.security.crypto.password.PasswordEncoder {
+public class MyPasswordEncoder implements org.springframework.security.crypto.password.PasswordEncoder {
     /**
      * 对密码进行加密
      */

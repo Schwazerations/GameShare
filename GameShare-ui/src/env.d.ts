@@ -11,5 +11,5 @@ declare module '*.vue' {
     export default component
 }
 
-declare module '@/api/*.js';
-declare module '@/utils/*.js';
+declare module '@/api/*';
+declare module '@/utils/*';

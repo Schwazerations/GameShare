@@ -28,6 +28,27 @@ export default {
 </script>
 
 <style scoped>
+button {
+    border-radius:15px;
+    border:1px solid #20b2aa ;
+    background:#20b2aa;
+    width: 100px;
+    height: 40px;
+    line-height: 30px;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    letter-spacing:4px;
+    transition:transform 80ms ease-in;
+    cursor:pointer;
+}
+button:active {
+    transform:scale(.90);
+}
+button:focus {
+    outline:none;
+}
+
 .overlay-container {
     position:absolute;
     top:0;

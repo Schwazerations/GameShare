@@ -5,7 +5,7 @@
         <table class="icon-table">
             <tr>
                 <td><img class="icon-img" @click="doLikeAction()" :src="showLikeImg()"/></td>
-                <td><img class="icon-img" @click="showCommentModule = !showCommentModule" :src="constCImg"/></td>
+                <td><img class="icon-img" @click="showCommentModule = !showCommentModule" :src="constCommentImg"/></td>
             </tr>
             <tr>
                 <td>{{tempLikeNum }}</td>
@@ -94,16 +94,17 @@ import { doLike } from '@/api/game'
 import { getCommentByPage, addComment, doCommentLike, doCommentReply } from '@/api/comment';
 
 // Constants
-const constSofa = 'src/assets/images/sofa.png';
-const constCImg = 'src/assets/images/comment.png';
+const imgDir = '/src/assets/images/';
+const constSofa = imgDir + 'sofa.png';
 const constLikeImg = {
-  'off': 'src/assets/images/like.png',
-  'on': 'src/assets/images/like_yes.png',
+  'off': imgDir + 'like.png',
+  'on': imgDir + 'like_yes.png',
 };
-const constCommentReply = 'src/assets/images/comment_reply.png';
+const constCommentImg = imgDir + 'comment.png';
+const constCommentReply = imgDir + 'comment_reply.png';
 const constCommentLikeImg = {
-  'off': 'src/assets/images/comment_like.png',
-  'on': 'src/assets/images/comment_like_yes.png',
+  'off': imgDir + 'comment_like.png',
+  'on': imgDir + 'comment_like_yes.png',
 };
 
 // Props

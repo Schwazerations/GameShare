@@ -55,6 +55,7 @@ public class JwtUtil {
             }
             Map<String, Object> data = new HashMap<>();
             data.put("uid",claims.getSubject());
+            data.put("uname",claims.get("uname", String.class));
             return Result.ok().message("token验证成功").data(data);
         } catch (Exception e) {
             return Result.error().message("token验证失败");

@@ -1,4 +1,4 @@
-package com.game.common.utils;
+package com.game.common.utils.generator;
 
 /**
  * Description :

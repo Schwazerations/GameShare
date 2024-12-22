@@ -12,7 +12,6 @@
 
     <description>
         web模块
-        ---之所以需要引入看似不相关的framework（其间接依赖common）模块，是因为security运行时需要站在web模块（即启动类所在地）的位置上调用别的模块中的类（在这里是配置类、工具类等）。
     </description>
 
 
@@ -54,7 +53,6 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-security</artifactId>
         </dependency>
-
 
         <!-- 模块framework 依赖 -->
         <dependency>

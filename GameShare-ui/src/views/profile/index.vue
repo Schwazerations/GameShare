@@ -67,8 +67,12 @@ getUser(jwt.value.sub)
 const signIn = () =>{
 	doSignIn(user.value.uid)
 	.then(res=>{
-		user.value.upoint = parseInt(user.value.upoint) + res.data.point;
-		ElMessage({ message: `签到成功！获得${res.data.point}积分。`, type: 'success', })
+		if (res.message === '今日已签到') {
+			ElMessage({ message: '今日已签到！别急呦 ~', type: 'info' });
+		} else {
+			user.value.upoint = parseInt(user.value.upoint) + res.data.point;
+			ElMessage({ message: `签到成功！获得${ res.data.point }积分。`, type: 'success', })
+		}
 	})
 }
 

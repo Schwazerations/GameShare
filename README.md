@@ -3,6 +3,19 @@
 
 <strong style="color:#334499">（ 注：README.md于24年8月2日开始更新。）</strong>
 
+<br><br><br><br><br>
+> ### 更新日志
+- **更新日期**：2024年12月22日
+- **更新内容**：
+- 新增验证码模块，其中使用了Redis。
+- 为契合验证码验证功能，对于Spring Security的认证模块，取消了security配置中的loginForm配置，使用了自定义的login控制器；使用了自定义的认证提供者（MyLoginAuthenticationProvider）。
+- 为迎合基于json的请求数据传递形式，对于登录、注册等请求，前端调整了请求发送类型为Json，后端新增了一些模型实体类，例如LoginUser。
+- 增加了一些异常类、常量接口，例如 CaptchaException、CacheConstants。
+- 完成了注册页功能，注册页新增基于element-plus的表单验证。
+- 附上更新后的SQL文件。
+##### 注册功能演示如下：
+<img src="storage/README_pictures/注册功能演示.gif" alt="注册功能演示" width="600px">
+
 
 <br><br><br><br><br>
 > ### 更新日志
@@ -11,7 +24,6 @@
 - 修补了评论区分页查询bug，评论区沙发显示bug。
 - 前端vue各页面的API风格由选项式API(Options API)统一更换为组合式API (Composition API)。
 - vue版本由原来的3.4.38升级到3.5.13。旨在获取该版本增加的下列特性: 访问 defineProps 解构的变量时，Vue 编译器会自动在前面添加 props，意即其值将自动刷新。
-
 
 
 <br><br><br><br><br>

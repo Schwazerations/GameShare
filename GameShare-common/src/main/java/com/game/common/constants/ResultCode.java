@@ -1,4 +1,4 @@
-package com.game.common.utils;
+package com.game.common.constants;
 
 public interface ResultCode {
     Integer SUCCESS = 200;

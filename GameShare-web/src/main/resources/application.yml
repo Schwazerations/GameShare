@@ -3,6 +3,30 @@
 #    user:
 #      name: root
 #      password: root
-logging:
-  level:
-    com.game.mapper: TRACE
+#logging:
+#  level:
+#    org.apache.ibatis: WARN
+#    org.mybatis.spring: WARN
+#    com.alibaba.druid: WARN
+#    com.game.mapper: INFO
+#    org.springframework.security: DEBUG
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/game_db?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#      password: 123456
+#      database: 0
+      # we select lettuce:
+#      lettuce:
+#        pool:
+#          max-idle: 16
+#          max-active: 32
+#          min-idle: 8

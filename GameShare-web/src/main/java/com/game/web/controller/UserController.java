@@ -28,8 +28,8 @@ public class UserController {
     private UserServiceImpl userService;
 
     @GetMapping("/{uid}")
-//    @PreAuthorize("hasRole('ROLE_USER')")
-    @PreAuthorize("hasAuthority('user:manager')")
+    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasAuthority('user:manager')")
     @Operation(summary = "查询某个用户的信息")
     public Result listOneUser(@PathVariable String uid) {
         User user = userMapper.selectById(uid);
@@ -38,8 +38,8 @@ public class UserController {
 
     @PostMapping("/signIn")
     @Operation(summary = "用户每日签到")
-    public Result signIn(@RequestParam String uid) {
-        return userService.signIn(uid);
+    public Result signIn(@RequestBody User user) {
+        return userService.signIn(user.getUid());
     }
 
 }

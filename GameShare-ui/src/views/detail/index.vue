@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import Header from '@comp/Header.vue'
 import Footer from '@comp/Footer.vue'
 import Cover from './Cover.vue'
@@ -38,10 +38,11 @@ let commentNum = ref(null)
 let jwt = ref(getDecodedToken())
 
 const route = useRoute()
+const router = useRouter()
 const uid = jwt.value.sub
-const gid = route.query.gid
-if (gid === '0' || util.isUndefined(gid)) {  //若查询参数gid为0或未定义，则路由至 /404
-    route.push('/404');
+const gid = route.params.gid
+if (gid === '0' || util.isNull(gid)) {  // 无效页面，路由至/404
+    router.push('/404');
 }
 
 getAllDetails(uid, gid)

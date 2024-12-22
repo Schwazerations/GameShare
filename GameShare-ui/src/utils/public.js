@@ -14,7 +14,7 @@ export function getCookie(name) {       // 获取cookie
 }
 
 export function isNull(obj) {   // 判断是否为空
-    return obj == null || obj == undefined || obj == '' ;
+    return obj === null || isUndefined(obj) || obj === '' ;
 }
 
 export function isUndefined(obj){ // 判断是否为undefined

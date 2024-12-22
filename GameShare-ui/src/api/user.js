@@ -13,9 +13,6 @@ export function doSignIn(uid){
         method: 'post',
         data: {
             uid: uid
-        },
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
         }
     })
 }

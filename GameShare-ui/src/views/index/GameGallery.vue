@@ -1,14 +1,18 @@
 <template>
     <!-- 游戏列表模板 -->
     <div class="game-box">
-        <h2 class="title">&emsp;{{title}}</h2>
+        <h2 class="title">&emsp;{{ title }}</h2>
         <section class="game-gallery">
             <article class="game-item" v-for="game in data" :key="game.id">
                 <figure>
-                    <router-link class="game-link" :to="{name: 'Detail', query: { gid: game.gid }}">
+                    <router-link class="game-link" :to="{
+                        name: 'Detail', params: {
+                             gid: game.gid
+                        }
+                    }">
                         <img :src="game.img" :alt="game.name">
                     </router-link>
-                    <figcaption class="game-name">{{game.name}}</figcaption>
+                    <figcaption class="game-name">{{ game.name }}</figcaption>
                 </figure>
             </article>
         </section>
@@ -24,7 +28,6 @@ const props = defineProps({
 </script>
 
 <style scoped>
-/************************<!-- 游戏一览 -->*********************/
 .game-box{
     width: 1200px;
     height: 940px;

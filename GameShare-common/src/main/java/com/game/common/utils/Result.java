@@ -1,5 +1,6 @@
 package com.game.common.utils;
 
+import com.game.common.constants.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

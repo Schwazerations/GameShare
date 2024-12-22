@@ -2,7 +2,7 @@
   <Header/>
 	<div class="background" >
 		<div class="back-btn">
-			<router-link :to="{name:'Info'}">
+			<router-link :to="{name:'Profile'}">
 				<el-button :round="true">返回上页</el-button>
 			</router-link>
 		</div>

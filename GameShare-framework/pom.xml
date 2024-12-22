@@ -12,7 +12,7 @@
 
 
     <description>
-        框架模块
+        framework模块
     </description>
 
 
@@ -22,12 +22,6 @@
 
 
     <dependencies>
-
-        <!-- Spring Boot Security -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
 
 
         <!-- 模块dao 依赖 -->

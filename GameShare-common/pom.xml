@@ -11,7 +11,7 @@
     <artifactId>common</artifactId>
 
     <description>
-        web模块
+        common模块
     </description>
 
 
@@ -34,12 +34,17 @@
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
         </dependency>
 
+        <!-- Spring Boot Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <!-- lombok依赖（被实体类依赖） -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
 
         <!-- JWT 依赖（被工具类依赖） -->
         <dependency>
@@ -54,6 +59,7 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
         </dependency>
+
 
 
 

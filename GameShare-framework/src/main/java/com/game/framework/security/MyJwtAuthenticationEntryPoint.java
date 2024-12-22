@@ -2,7 +2,7 @@ package com.game.framework.security;
 
 import com.game.common.utils.JSONUtil;
 import com.game.common.utils.Result;
-import com.game.common.utils.ResultCode;
+import com.game.common.constants.ResultCode;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 
-public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
+public class MyJwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
         System.err.println("【Jwt EntryPoint】 jwt认证失败：jwt无效或为空。");

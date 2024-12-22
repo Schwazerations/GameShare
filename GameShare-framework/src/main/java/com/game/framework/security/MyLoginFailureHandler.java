@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 
-public class LoginFailureHandler implements AuthenticationFailureHandler {
+public class MyLoginFailureHandler implements AuthenticationFailureHandler {
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
